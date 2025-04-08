@@ -438,7 +438,8 @@ const draggableComponent = {
       transitionContainer.kept = undefined;
     },
 
-    onDragStart(evt) {
+      onDragStart(evt) {
+          console.log("github");
       if (evt.items && evt.items.length) {
         this.doDragStartList(evt);
       } else {
@@ -458,7 +459,8 @@ const draggableComponent = {
       draggingElement = evt.item;
     },
 
-    onDragAdd(evt) {
+      onDragAdd(evt) {
+          console.log("github");
       const element = evt.item._underlying_vm_;
       if (element === undefined) {
         return;
@@ -494,7 +496,8 @@ const draggableComponent = {
       this.emitChanges({ added });
     },
 
-    onDragRemove(evt) {
+      onDragRemove(evt) {
+          console.log("github");
       if (Array.isArray(this.context)) {
         this.doDragRemoveList(evt);
       } else {
@@ -542,7 +545,8 @@ const draggableComponent = {
       this.emitChanges({ removed });
     },
 
-    onDragUpdate(evt) {
+      onDragUpdate(evt) {
+          console.log("github");
       if (Array.isArray(this.context)) {
         this.doDragUpdateList(evt);
       } else {
@@ -605,7 +609,8 @@ const draggableComponent = {
         : currentIndex + 1;
     },
 
-    onDragMove(evt, originalEvent) {
+      onDragMove(evt, originalEvent) {
+          console.log("github");
       const onMove = this.move;
       if (!onMove || !this.realList) {
         return true;
@@ -622,7 +627,8 @@ const draggableComponent = {
       return onMove(sendEvt, originalEvent);
     },
 
-    onDragEnd(evt) {
+      onDragEnd(evt) {
+          console.log("github");
       evt.items.forEach(Sortable.utils.deselect);
       this.computeIndexes();
       draggingElement = null;
